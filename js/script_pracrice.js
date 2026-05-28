@@ -48,18 +48,18 @@ for (let i = 1; i <= 8; i++) {
   num++;
 }
 
-//tast 1
+//tast 3.1
 for (let i = 5; i <= 10; i++) {
   console.log(i);
 }
-//task 2
+//task 3.2
 for (let i = 20; i >= 10; i--) {
   console.log(i);
   if (i === 13) {
     break;
   }
 }
-//task 3
+//task 3.3
 for (let i = 2; i <= 10; i++) {
   if (i % 2 === 0) {
     console.log(i);
@@ -70,7 +70,7 @@ for (let i = 2; i <= 10; i++) {
 //   console.log(i);
 // }
 
-//task 4
+//task 3.4
 for (let i = 2; i <= 16; i++) {
   if (i % 2 === 0) {
     continue;
@@ -88,14 +88,14 @@ while (i <= 16) {
   console.log(i);
   i++;
 }
-//task 5
+//task 3.5
 const arrayOfNumbers = [];
 for (let i = 0; i <= 5; i++) {
   arrayOfNumbers[i] = i + 5;
 }
 console.log(arrayOfNumbers);
 
-//tast result array
+//tast 4.1 result array
 const arr = [3, 5, 8, 16, 20, 23, 50];
 const result = [];
 
@@ -104,7 +104,7 @@ for (let i = 0; i < arr.length; i++) {
 }
 console.log(result);
 
-//task switch data
+//task 4.2 switch data
 const data = [5, 10, "Shopping", 20, "Homework"];
 
 for (let i = 0; i < data.length; i++) {
@@ -121,7 +121,7 @@ for (let i = 0; i < data.length; i++) {
 }
 console.log(data);
 
-//task reverse data
+//task 4.3 reverse data
 const data = [5, 10, "Shopping", 20, "Homework"];
 const result = [];
 for (i = 0; i < data.length; i++) {
@@ -129,7 +129,7 @@ for (i = 0; i < data.length; i++) {
 }
 console.log(result);
 
-//task making a tree
+//task 5 making a tree
 const lines = 5;
 let result = "";
 
@@ -148,3 +148,89 @@ for (let i = 1; i <= lines * 2; i++) {
 }
 
 console.log(result);
+
+let num = 20;
+
+function showFirstMessage(text) {
+  console.log(text);
+  let num = 10;
+  console.log(num);
+}
+showFirstMessage("Hello World!");
+console.log(num);
+
+function calc(a, b) {
+  return a + b;
+}
+console.log(calc(10, 20));
+console.log(calc(2, 8));
+console.log(calc(11, 5));
+
+function ret() {
+  let num = 50;
+  return num;
+}
+const anatherNum = ret();
+console.log(anatherNum);
+
+const logger = function () {
+  console.log("hello");
+};
+logger();
+
+const calc = (a, b) => a + b;
+
+const usdCurr = 28;
+const discount = 0.9;
+
+function convert(amount, curr) {
+  return curr * amount;
+}
+
+function promotion(result) {
+  console.log(result * discount);
+}
+
+const res = convert(500, usdCurr);
+promotion(res);
+
+function test() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return;
+  }
+  console.log("done");
+}
+test();
+
+//task 6.1
+function sayHello(name) {
+  return "Hello," + " " + name + "!";
+}
+
+console.log(sayHello("Dmytro"));
+
+//tast 6.2
+function returnNeighboringNumbers(num) {
+  const numbers = [];
+  numbers[0] = num - 1;
+  numbers[1] = num;
+  numbers[2] = num + 1;
+  return numbers;
+}
+console.log(returnNeighboringNumbers(6));
+
+//task 6.3
+function getMathResult(numFirst, numSecond) {
+  let result = "";
+  let k = numFirst;
+  result = result + String(numFirst);
+  for (let i = 1; i < numSecond; i++) {
+    k = numFirst + k;
+    result += "---" + String(k);
+  }
+  if (numSecond <= 0 || typeof numSecond != "number") {
+    return numFirst;
+  } else return result;
+}
+console.log(getMathResult(5, 5));
