@@ -20,12 +20,26 @@ const personalMovieDB = {
 // personalMovieDB.movies[answers[1]] = answers[2];
 // personalMovieDB.movies[answers[3]] = answers[4];
 
-const a = prompt("Один із ваших недавньо переглянутих фільмів", ""),
-  b = prompt("На скільки ви його оціните", ""),
-  c = prompt("Один із ваших недавньо переглянутих фільмів", ""),
-  d = prompt("На скільки ви його оціните", "");
+for (let i = 0; i < 2; i++) {
+  const a = prompt("Один із ваших недавньо переглянутих фільмів", ""),
+    b = prompt("На скільки ви його оціните", "");
+  if (a != null && b != null && a != "" && b != "" && a.length < 50) {
+    personalMovieDB.movies[a] = b;
+    console.log("done");
+  } else {
+    console.log("error");
+    i--;
+  }
+}
 
-personalMovieDB.movies[a] = b;
-personalMovieDB.movies[c] = d;
+if (personalMovieDB.count < 10) {
+  console.log("Переглянуто доволі мало фільмів");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
+  console.log("Ви класичний глядач");
+} else if (personalMovieDB.count >= 30) {
+  console.log("Ви кіноман");
+} else {
+  console.log("Виникла помилка");
+}
 
 console.log(personalMovieDB);
