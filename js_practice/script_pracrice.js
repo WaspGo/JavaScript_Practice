@@ -258,3 +258,62 @@ console.log(Math.round(num));
 const test = "12.2px";
 console.log(parseInt(test));
 console.log(parseFloat(test));
+
+// task 7.1
+function calculateVolumeAndArea(edgeOfCube) {
+  const volumeOfCube = edgeOfCube * edgeOfCube * edgeOfCube;
+  const areaOfCube = 6 * (edgeOfCube * edgeOfCube);
+  if (
+    volumeOfCube == "" ||
+    areaOfCube == "" ||
+    typeof volumeOfCube != "number" ||
+    typeof areaOfCube != "number" ||
+    volumeOfCube == null ||
+    areaOfCube == null ||
+    volumeOfCube % 1 != 0 ||
+    areaOfCube % 1 != 0 ||
+    volumeOfCube <= 0 ||
+    areaOfCube <= 0
+  ) {
+    return "При вичислення виникла помилка";
+  } else {
+    return `Об'єм куба: ${volumeOfCube}, площа всій поверхні: ${areaOfCube}`;
+  }
+}
+console.log(calculateVolumeAndArea(5));
+
+//task 7.2
+function getCoupeNumber(number) {
+  if (
+    number % 1 != 0 ||
+    number < 0 ||
+    typeof number == "string" ||
+    number == null ||
+    number == ""
+  ) {
+    return "Помилка. Перевірте правильність введеного номера місця";
+  }
+  if (number > 36 || number == 0) {
+    return "Таких місць у вагоні не існує";
+  }
+  if (number <= 4) {
+    return 1;
+  } else if (number <= 8) {
+    return 2;
+  } else if (number <= 12) {
+    return 3;
+  } else if (number <= 16) {
+    return 4;
+  } else if (number <= 20) {
+    return 5;
+  } else if (number <= 24) {
+    return 6;
+  } else if (number <= 28) {
+    return 7;
+  } else if (number <= 32) {
+    return 8;
+  } else if (number <= 36) {
+    return 9;
+  }
+}
+console.log(getCoupeNumber(12));
