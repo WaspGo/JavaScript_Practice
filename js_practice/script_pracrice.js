@@ -334,11 +334,10 @@ function getTimeFromMinutes(minutes) {
   const remMinutes = minutes % 60;
 
   function getHoursWord(hours) {
-    const lastDigit = hours % 10;
-    if (lastDigit === 1) {
+    if (hours === 1) {
       return "година";
     }
-    if (lastDigit >= 2 && lastDigit <= 4) {
+    if (hours >= 2 && hours <= 4) {
       return "години";
     } else return "годин";
   }
