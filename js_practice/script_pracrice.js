@@ -351,3 +351,28 @@ console.log(getTimeFromMinutes(120)); // "Це 2 години та 0 хвили�
 console.log(getTimeFromMinutes(150)); // "Це 2 години та 30 хвилин"
 console.log(getTimeFromMinutes(300)); // "Це 5 годин та 0 хвилин"
 console.log(getTimeFromMinutes(660)); // "Це 11 годин та 0 хвилин"
+
+//task 8.2
+function findMaxNumber(a, b, c, d) {
+  if (
+    typeof a !== "number" ||
+    typeof b !== "number" ||
+    typeof c !== "number" ||
+    typeof d !== "number"
+  ) {
+    return 0;
+  }
+
+  if (a < b) {
+    a = b;
+  }
+  if (a < c) {
+    a = c;
+  }
+  if (a < d) {
+    a = d;
+  }
+  return a;
+}
+
+console.log(findMaxNumber(1, 6, 8, 7));
