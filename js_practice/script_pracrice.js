@@ -317,3 +317,38 @@ function getCoupeNumber(number) {
   }
 }
 console.log(getCoupeNumber(12));
+
+//task 8.1
+function getTimeFromMinutes(minutes) {
+  if (
+    minutes < 0 ||
+    minutes === null ||
+    minutes > 600 ||
+    typeof minutes !== "number" ||
+    minutes % 1 !== 0
+  ) {
+    return "Помилка. Перевірте дані";
+  }
+
+  const hours = Math.floor(minutes / 60);
+  const remMinutes = minutes % 60;
+
+  function getHoursWord(hours) {
+    const lastDigit = hours % 10;
+    if (lastDigit === 1) {
+      return "година";
+    }
+    if (lastDigit >= 2 && lastDigit <= 4) {
+      return "години";
+    } else return "годин";
+  }
+  const hoursWord = getHoursWord(hours);
+  return `Це ${hours} ${hoursWord} та ${remMinutes} хвилин`;
+}
+
+console.log(getTimeFromMinutes(0)); // "Це 0 годин та 0 хвилин"
+console.log(getTimeFromMinutes(60)); // "Це 1 година та 0 хвилин"
+console.log(getTimeFromMinutes(120)); // "Це 2 години та 0 хвилин"
+console.log(getTimeFromMinutes(150)); // "Це 2 години та 30 хвилин"
+console.log(getTimeFromMinutes(300)); // "Це 5 годин та 0 хвилин"
+console.log(getTimeFromMinutes(660)); // "Це 11 годин та 0 хвилин"
