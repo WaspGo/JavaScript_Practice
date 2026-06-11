@@ -376,3 +376,30 @@ function findMaxNumber(a, b, c, d) {
 }
 
 console.log(findMaxNumber(1, 6, 8, 7));
+
+//task 9
+function fib(a) {
+  if (typeof a != "number" || a == 0) {
+    return "";
+  }
+  if (a == 1) {
+    return "0";
+  }
+  let numbers = [a];
+  let c = 0;
+  let d = 1;
+  numbers[0] = c;
+  numbers[1] = d;
+  let result = `${numbers[0]} ${numbers[1]}`;
+  for (i = 2; i < a; i++) {
+    c = c + d;
+    d = d + c;
+    numbers[i] = c;
+    result += ` ${numbers[i]}`;
+    numbers[i + 1] = d;
+    i++;
+    result += ` ${numbers[i]}`;
+  }
+  return result;
+}
+console.log(fib(15));
