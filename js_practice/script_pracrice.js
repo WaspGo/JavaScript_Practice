@@ -379,7 +379,7 @@ console.log(findMaxNumber(1, 6, 8, 7));
 
 //task 9
 function fib(a) {
-  if (typeof a != "number" || a == 0) {
+  if (typeof a != "number" || a <= 0) {
     return "";
   }
   if (a == 1) {
