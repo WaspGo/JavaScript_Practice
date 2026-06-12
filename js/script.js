@@ -32,7 +32,7 @@ const personalMovieDB = {
 
 function rememberMyFilms() {
   for (let i = 0; i < 2; i++) {
-    const a = prompt("Один із ваших недавньо переглянутих фільмів", ""),
+    const a = prompt("Один із ваших недавньо переглянутих фільмів", "").trim(),
       b = prompt("На скільки ви його оціните", "");
     if (a != null && b != null && a != "" && b != "" && a.length < 50) {
       personalMovieDB.movies[a] = b;
