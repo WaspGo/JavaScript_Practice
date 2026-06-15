@@ -562,6 +562,54 @@ const q = {
   one: 1,
   two: 2,
 };
-
+console.log(q);
 const newObj = { ...q };
 console.log(newObj);
+
+//task 10.1
+const personalPlanPeter = {
+  name: "Peter",
+  age: "29",
+  skills: {
+    languages: ["ua", "eng"],
+    programmingLangs: {
+      js: "20%",
+      php: "10%",
+    },
+    exp: "1 month",
+  },
+  showAgeAndLangs: function (plan) {
+    const { age } = plan;
+    const { languages } = plan.skills;
+    const langStrt = languages.join(" ").toUpperCase();
+
+    console.log(`Мені ${age} та я володію мовами: ${langStrt}`);
+  },
+};
+
+function showExperience(plan) {
+  const { exp } = plan.skills;
+  console.log(exp);
+}
+showExperience(personalPlanPeter);
+
+//task 10.2
+function showProgrammingLangs(plan) {
+  for (let key in plan) {
+    if (typeof plan[key] === "object") {
+      const newObj = { ...personalPlanPeter.skills };
+      for (let i in newObj) {
+        if (typeof newObj[i] === "object") {
+          delete newObj.languages;
+          for (let k in newObj[i]) {
+            console.log(`Мова ${k} вивчена на ${newObj[i][k]}`);
+          }
+        }
+      }
+    }
+  }
+}
+showProgrammingLangs(personalPlanPeter);
+
+//task 10.3
+personalPlanPeter.showAgeAndLangs(personalPlanPeter);
