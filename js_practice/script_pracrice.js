@@ -613,3 +613,71 @@ showProgrammingLangs(personalPlanPeter);
 
 //task 10.3
 personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+
+//task 11.1
+const family = ["Peter", "Ann", "Alex", "Linda"];
+
+function showFamily(arr) {
+  let familyCounter = `${family[0]}`;
+  if (family.length === 0 || family[0] === "") {
+    console.log("Сімʼя пуста");
+  } else {
+    for (let i = 1; i < family.length; i++) {
+      familyCounter += ` ${family[i]}`;
+    }
+    console.log(`Сімʼя складається з: ${familyCounter}`);
+  }
+}
+
+showFamily(family);
+
+//task 11.2
+const favoriteCities = ["liSBon", "ROME", "miLan", "Dublin"];
+
+function standardizeStrings(arr) {
+  arr.forEach(function (item, i, arr) {
+    console.log(`${item.toLowerCase()}`);
+  });
+}
+standardizeStrings(favoriteCities);
+
+//task 12.3
+const someString = "This is some strange string";
+
+function reverse(str) {
+  let a = str.length;
+  let b = str.length - 1;
+  let final = ``;
+  if (typeof str !== "string") {
+    console.log("Помилка!");
+  } else {
+    for (let i = 0; i < str.length; i++) {
+      final += `${str.slice(b, a)}`;
+      a--;
+      b--;
+    }
+    console.log(final);
+  }
+}
+reverse(someString);
+
+//task 12.4
+const baseCurrencies = ["USD", "EUR"];
+const additionalCurrencies = ["UAH", "THB", "CNY"];
+const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
+let stringCurrencies = `Доступні валюти: \n`;
+const cleanArr = [];
+function availableCurr(arr, missingCurr) {
+  const a = allCurrencies.indexOf(missingCurr);
+  delete allCurrencies[a];
+  allCurrencies.forEach(function (item) {
+    if (item !== "") {
+      cleanArr.push(item);
+    }
+  });
+  for (let i = 0; i < cleanArr.length; i++) {
+    stringCurrencies += ` ${cleanArr[i]} \n`;
+  }
+  console.log(stringCurrencies);
+}
+availableCurr(allCurrencies, "THB");
