@@ -687,3 +687,25 @@ function availableCurr(arr, missingCurr) {
   }
 }
 availableCurr(allCurrencies, "THB");
+
+//
+const soldier = {
+  health: 400,
+  armor: 100,
+  sayHello: function () {
+    console.log("Hello!");
+  },
+};
+
+const john = Object.create(soldier); // створює обʼєкт та звʼязує з прототипом (здебільшого використовують це)
+
+// const john = {
+//   health: 100,
+// };
+
+// john.__proto__ = soldier; // застарілий метод
+
+// Object.setPrototypeOf(john, soldier); // вже є обʼєкт та назначаємо йому прототип
+
+console.log(john.armor);
+john.sayHello();
