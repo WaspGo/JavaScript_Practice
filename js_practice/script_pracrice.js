@@ -665,19 +665,25 @@ reverse(someString);
 const baseCurrencies = ["USD", "EUR"];
 const additionalCurrencies = ["UAH", "THB", "CNY"];
 const allCurrencies = [...baseCurrencies, ...additionalCurrencies];
-let stringCurrencies = `Доступні валюти: \n`;
-const cleanArr = [];
+
 function availableCurr(arr, missingCurr) {
-  const a = allCurrencies.indexOf(missingCurr);
-  delete allCurrencies[a];
-  allCurrencies.forEach(function (item) {
+  let stringCurrencies = `Доступні валюти: \n`;
+  const cleanArr = [];
+  const a = arr.indexOf(missingCurr);
+  delete arr[a];
+
+  arr.forEach(function (item) {
     if (item !== "") {
       cleanArr.push(item);
     }
   });
-  for (let i = 0; i < cleanArr.length; i++) {
-    stringCurrencies += ` ${cleanArr[i]} \n`;
+  if (allCurrencies.length === 0) {
+    console.log("Немає доступних валют");
+  } else {
+    for (let i = 0; i < cleanArr.length; i++) {
+      stringCurrencies += ` ${cleanArr[i]} \n`;
+    }
+    console.log(stringCurrencies);
   }
-  console.log(stringCurrencies);
 }
 availableCurr(allCurrencies, "THB");
