@@ -709,3 +709,91 @@ const john = Object.create(soldier); // створює обʼєкт та звʼ�
 
 console.log(john.armor);
 john.sayHello();
+
+//task 13
+const shoppingMallData = {
+  shops: [
+    {
+      width: 10,
+      length: 5,
+    },
+    {
+      width: 15,
+      length: 7,
+    },
+    {
+      width: 20,
+      length: 5,
+    },
+    {
+      width: 8,
+      length: 10,
+    },
+    { ksmad: 10, sajdn: 100 },
+  ],
+  height: 5,
+  moneyPer1m3: 30,
+  budget: 50000,
+};
+
+function isBudgetEnough(data) {
+  let shopArea = 0;
+
+  for (let i = 0; i < data.shops.length; i++) {
+    if (
+      data.shops[i].width === undefined ||
+      data.shops[i].length === undefined
+    ) {
+      continue;
+    }
+    shopArea = shopArea + data.shops[i].width * data.shops[i].length;
+  }
+
+  const shopVolume = shopArea * data.height;
+  let expensesAmount = shopVolume * data.moneyPer1m3;
+  console.log(shopArea);
+  console.log(shopVolume);
+  console.log(expensesAmount);
+  if (expensesAmount > data.budget) {
+    console.log("Нестача бюджету");
+  } else {
+    console.log("Бюджету достатньо");
+  }
+}
+isBudgetEnough(shoppingMallData);
+
+//task 14
+const students = [
+  "Peter",
+  "Andrew",
+  "Ann",
+  "Mark",
+  "Josh",
+  "Sandra",
+  "Cris",
+  "Bernard",
+  "Takesi",
+  "Sam",
+];
+
+function sortStudentsByGroups(arr) {
+  arr.sort();
+  let finalTeam = [];
+  const firstTeam = arr.slice(0, 3);
+  const secondTeam = arr.slice(3, 6);
+  const thirdTeam = arr.slice(6, 9);
+  const remainingStudents = arr.slice(9);
+  let messageAboutStudents = `Студенти, що залишилися:`;
+  if (arr.length <= 9) {
+    messageAboutStudents += ` -`;
+  } else {
+    messageAboutStudents += ` ${remainingStudents[0]}`;
+    for (let i = 1; i < remainingStudents.length; i++) {
+      messageAboutStudents += `, ${remainingStudents[i]}`;
+    }
+  }
+  finalTeam.push(firstTeam, secondTeam, thirdTeam, `${messageAboutStudents}`);
+
+  console.log(finalTeam);
+}
+sortStudentsByGroups(students);
