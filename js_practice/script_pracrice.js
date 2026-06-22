@@ -797,3 +797,82 @@ function sortStudentsByGroups(arr) {
   console.log(finalTeam);
 }
 sortStudentsByGroups(students);
+
+//
+// To String
+
+// 1)
+console.log(typeof String(5)); // Рідко використовується
+
+// 2)
+console.log(typeof (5 + ""));
+
+// 3)
+console.log(typeof `${5}`);
+
+// To Number
+
+// 1)
+console.log(typeof Number("5")); // Рідко використовується
+
+// 2)
+console.log(typeof +"5");
+
+// 3)
+console.log(typeof parseInt("15px", 10));
+
+let answ = +prompt("Hello", "");
+
+// To Boolean
+
+// 0, "", null, undefined, NaN Завжди перетворюється у False
+
+// 1)
+let swither = null;
+
+if (swither) {
+  console.log("Working...");
+}
+
+swither = 1;
+if (swither) {
+  console.log("Working....");
+}
+
+// 2)
+console.log(typeof Boolean("4"));
+
+// 3)
+console.log(typeof !!"444");
+
+//
+let number = 5;
+
+function logNumber() {
+  let number = 4;
+
+  console.log(number);
+}
+
+number = 6;
+logNumber();
+
+number = 8;
+logNumber();
+
+//
+function createCounter() {
+  let counter = 0;
+  const myFunction = function () {
+    counter = counter + 1;
+    return counter;
+  };
+  return myFunction;
+}
+
+const increment = createCounter();
+const c1 = increment();
+const c2 = increment();
+const c3 = increment();
+
+console.log(c1, c2, c3);
