@@ -1049,11 +1049,17 @@ function getTotalProgressByRecursion(data) {
 const result = getTotalProgressByRecursion(students);
 console.log(result[0] / result[1]);
 
-function factorial(data) {
-  if (typeof data !== "number" || data % 2 !== 0) {
+function factorial(x) {
+  if (typeof x !== "number" || x % 1 !== 0) {
     return "Введіть число!";
-  } else if (data <= 0) {
+  } else if (x <= 0) {
     return 1;
   }
+
+  if (x === 1) {
+    return 1;
+  } else {
+    return x * factorial(x - 1);
+  }
 }
-console.log(factorial(0));
+console.log(factorial(5));
