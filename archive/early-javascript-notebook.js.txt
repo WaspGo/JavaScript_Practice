@@ -1063,3 +1063,20 @@ function factorial(x) {
   }
 }
 console.log(factorial(5));
+
+function descendingOrder(n) {
+  //...
+  let a = [];
+  let k = 1;
+  b = `${n}`;
+  for (let i = 0; i < b.length; i++) {
+    a[i] = b.slice(i, k);
+    k++;
+  }
+  a = a.sort((x, y) => y - x); // сортуємо один раз, коли масив готовий
+  a = a.join("");
+  a = Number(a);
+
+  return a;
+}
+console.log(descendingOrder(782364));
